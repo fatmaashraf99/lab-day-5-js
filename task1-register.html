@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+</head>
+<body>
+    <div class="registrationform">
+        <form action="task1-login.html" method="POST">
+            <h1>Registration </h1>
+            <label>Full name</label><br>
+            <input type="text"><br><br>
+            <label>Email</label><br>
+            <input type="email" name="email"  id="email"><br><br>
+            <label>Password</label><br>
+            <input type="password" name="Password" id="pass"><br><br>
+            <input type="submit" value="Sign up" onclick="LocalStorage()">
+    
+        </form>
+    </div>
+    <script>
+        function LocalStorage(){
+            var Email = document.getElementById("email").value
+            var Password = document.getElementById("pass").value
+
+            window.localStorage.setItem('Email', Email)
+            window.localStorage.setItem('Password', Password)
+
+             document.cookie = "Email =" + Email + ";Password =" + Password + ";expires=12/9/2022;path=/";
+        }
+    </script>
+</body>
+<style>
+    .registrationform{
+        text-align: center;
+        background-color: rgb(255, 238, 218);
+        margin: 200px 600px;
+        padding: 50px 20px;
+    }
+</style>
+</html>
